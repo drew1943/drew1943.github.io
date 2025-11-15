@@ -37,7 +37,8 @@
         <section>
             <h2>Upcoming Additions</h2>
             <ul>
-                <li>Unit 2: Personal info and hobby links</li>
+                <li>Unit 2: Personal info and hobby links, and first form</li>
+                         <li><a href="form1.html">Unit 2 Form</a></li>
                 <li>Unit 3: JavaScript functionality</li>
                 <li>Unit 4: Multimedia “how-to” page</li>
                 <li>Unit 5: Completed multi-page site</li>
