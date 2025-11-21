@@ -4,11 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cube Order Form</title>
+    <!-- Link to external CSS file for styling -->
     <link rel="stylesheet" href="styles.css">
 
     <script>
+        // Function to calculate running total based on selected cubes and their quantities
         function calculateTotal() {
             let total = 0;
+
+            // Prices for each cube type
             const prices = {
                 cube1: 12.99,
                 cube2: 59.99,
@@ -18,6 +22,7 @@
                 cube6: 15.99
             };
 
+            // Loop through each cube to check if selected and calculate total with quantity
             for (const id in prices) {
                 const checkbox = document.querySelector(`input[name="${id}"]`);
                 const qtyInput = document.querySelector(`input[name="qty${id.slice(-1)}"]`);
@@ -28,15 +33,19 @@
                 }
             }
 
+            // Display the calculated total in the designated span
             document.getElementById("totalDisplay").textContent = "$" + total.toFixed(2);
         }
 
+        // Function to handle form submission and show order summary
         function submitOrder(event) {
-            event.preventDefault();
+            event.preventDefault(); // Prevent page reload
 
+            // Collect customer info
             const firstname = document.querySelector('input[name="firstname"]').value;
             const lastname = document.querySelector('input[name="lastname"]').value;
 
+            // Cube labels and prices
             const cubeLabels = {
                 cube1: "Rubik Standard 3x3",
                 cube2: "GoCube Smart Cube",
@@ -45,7 +54,6 @@
                 cube5: "QiYi Pyraminx",
                 cube6: "ShengShou Megaminx"
             };
-
             const cubePrices = {
                 cube1: 12.99,
                 cube2: 59.99,
@@ -55,9 +63,10 @@
                 cube6: 15.99
             };
 
-            let orderDetails = [];
-            let total = 0;
+            let orderDetails = []; // Array to store selected items and quantities
+            let total = 0;         // Total order cost
 
+            // Loop through cubes to add selected items to order details
             for (const id in cubeLabels) {
                 const checkbox = document.querySelector(`input[name="${id}"]`);
                 const qtyInput = document.querySelector(`input[name="qty${id.slice(-1)}"]`);
@@ -70,6 +79,7 @@
                 }
             }
 
+            // Display order summary in an alert box
             alert(
                 "Your order has been submitted.\n\n" +
                 "Customer: " + firstname + " " + lastname + "\n" +
@@ -82,11 +92,13 @@
 </head>
 <body>
 
+    <!-- Header Section with page title and description -->
     <header>
         <h1>Cube Purchase Form</h1>
         <p>Complete the form below to build your custom order.</p>
     </header>
 
+    <!-- Navigation menu with Rubik's Cube colored links -->
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -102,8 +114,10 @@
     <main>
         <h2>Order Form</h2>
 
+        <!-- Start of main form -->
         <form onsubmit="submitOrder(event)">
 
+            <!-- Customer Information Section -->
             <div class="section-bubble bubble-white">
                 <h3>Your Information</h3>
                 <label>First Name:</label>
@@ -119,6 +133,7 @@
                 <input type="number" name="age" min="1"><br><br>
             </div>
 
+            <!-- Personal Preferences Section -->
             <div class="section-bubble bubble-yellow">
                 <h3>Personal Preferences</h3>
                 <label>Favorite Hobby:</label>
@@ -135,6 +150,7 @@
                 </select><br><br>
             </div>
 
+            <!-- Cube Type Selection Section -->
             <div class="section-bubble bubble-red">
                 <h3>Cube Type Selection</h3>
                 <label>Select a puzzle type:</label><br>
@@ -143,10 +159,12 @@
                 <input type="radio" name="choice" value="Megaminx"> Megaminx<br><br>
             </div>
 
+            <!-- Cube Brands and Models Section with Quantity -->
             <div class="section-bubble bubble-blue">
                 <h3>Cube Brands and Models</h3>
-                <label>Choose from the list (you may select more than one):</label><br>
+                <label>Select one or more cubes and set quantity:</label><br>
 
+                <!-- Each cube has a checkbox and a number input for quantity -->
                 <div>
                     <input type="checkbox" name="cube1" onclick="calculateTotal()"> Rubik Standard 3x3 ($12.99) 
                     Qty: <input type="number" name="qty1" value="1" min="1" style="width:50px;" onchange="calculateTotal()">
@@ -177,11 +195,13 @@
                     Qty: <input type="number" name="qty6" value="1" min="1" style="width:50px;" onchange="calculateTotal()">
                 </div>
 
+                <!-- Running total display -->
                 <h4>Running Total</h4>
                 <p><strong>Total: <span id="totalDisplay">$0.00</span></strong></p>
                 <button type="button" onclick="calculateTotal()">Recalculate Total</button>
             </div>
 
+            <!-- Experience Rating Section -->
             <div class="section-bubble bubble-green">
                 <h3>Experience Rating</h3>
                 <label>Rate your experience (1 to 10)</label><br>
@@ -190,6 +210,7 @@
                 <span id="expValue">5</span><br><br>
             </div>
 
+            <!-- Shipping Preference Section -->
             <div class="section-bubble bubble-orange">
                 <h3>Shipping Preference</h3>
                 <label>Shipping Speed Preference:</label>
@@ -201,11 +222,13 @@
                 </datalist><br><br>
             </div>
 
+            <!-- Additional Comments Section -->
             <div class="section-bubble bubble-white">
                 <h3>Additional Comments</h3>
                 <label>Comments:</label><br>
                 <textarea name="comments" rows="4" cols="40"></textarea><br><br>
 
+                <!-- Submit button to place the order -->
                 <button type="submit">Submit Order</button>
             </div>
 
