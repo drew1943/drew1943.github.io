@@ -3,18 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Second updated form for CSCI434</title>
-
-    <!-- External stylesheet link -->
+    <title>Cube Order Form</title>
     <link rel="stylesheet" href="styles.css">
+
+    <script>
+        function submitOrder(event) {
+            event.preventDefault();
+            alert("Your order has been submitted. Thank you.");
+        }
+    </script>
 </head>
 <body>
+
     <header>
-        <h1>Welcome to My Second Form in HTML for this course. </h1>
-        <p>This is an updated form to proccess something like an order.</p>
+        <h1>Cube Purchase Form</h1>
+        <p>Complete the form below to build your custom order.</p>
     </header>
-    
-          <!-- Navigation section for future pages -->
+
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -26,22 +31,26 @@
             <li><a href="interactive.html">Interactive Puzzle Tools</a></li>
         </ul>
     </nav>
-    
-    <h1>Unit 3 Practice Form</h1>
 
-        <!-- Draft of form with multiple imputs --> 
-    <form>
+    <h2>Order Form</h2>
+
+    <form onsubmit="submitOrder(event)">
+
+        <h3>Your Information</h3>
+
         <label>First Name:</label>
-        <input type="text" name="firstname"><br><br>
+        <input type="text" name="firstname" required><br><br>
 
         <label>Last Name:</label>
-        <input type="text" name="lastname"><br><br>
+        <input type="text" name="lastname" required><br><br>
 
         <label>Email:</label>
-        <input type="email" name="email"><br><br>
+        <input type="email" name="email" required><br><br>
 
         <label>Age:</label>
-        <input type="number" name="age"><br><br>
+        <input type="number" name="age" min="1"><br><br>
+
+        <h3>Personal Preferences</h3>
 
         <label>Favorite Hobby:</label>
         <input type="text" name="hobby"><br><br>
@@ -49,30 +58,49 @@
         <label>Favorite Color:</label>
         <input type="color" name="color"><br><br>
 
-        <label>Choose your skill level:</label>
+        <label>Skill Level:</label>
         <select name="skill">
             <option>Beginner</option>
             <option>Intermediate</option>
             <option>Advanced</option>
         </select><br><br>
 
-        <label>Choose an option:</label>
-        <input type="radio" name="choice" value="Option One"> 3x3
-        <input type="radio" name="choice" value="Option Two"> Piraminx
-        <input type="radio" name="choice" value="Option Two"> Megaminx
-        <br><br>
+        <h3>Cube Type Selection</h3>
 
-        <label>Cube brands to filter, check all that apply:</label>
-        <input type="checkbox" name="check1"> Rubik's
-        <input type="checkbox" name="check2"> GoCube
-        <input type="checkbox" name="check2"> Toyzon
-        <input type="checkbox" name="check2"> Other 
-        <br><br>
+        <label>Select a puzzle type:</label><br>
+        <input type="radio" name="choice" value="3x3"> 3x3 Cube<br>
+        <input type="radio" name="choice" value="Pyraminx"> Pyraminx<br>
+        <input type="radio" name="choice" value="Megaminx"> Megaminx<br><br>
 
-        <label>Rate Your Experience (1 to 10)</label><br>
-        <input type="range" name="experience" min="1" max="10" id="experienceRange" oninput="expValue.textContent = this.value">
+        <h3>Cube Brands and Models</h3>
+        <label>Choose from the list (you may select more than one):</label><br>
+
+        <input type="checkbox" name="cube1" value="Rubik Standard 3x3 ($12.99)">
+        Rubik Standard 3x3 ($12.99)<br>
+
+        <input type="checkbox" name="cube2" value="GoCube Smart Cube ($59.99)">
+        GoCube Smart Cube ($59.99)<br>
+
+        <input type="checkbox" name="cube3" value="Gan 356 RS ($22.99)">
+        Gan 356 RS ($22.99)<br>
+
+        <input type="checkbox" name="cube4" value="MoYu RS3M Magnetic ($14.99)">
+        MoYu RS3M Magnetic ($14.99)<br>
+
+        <input type="checkbox" name="cube5" value="QiYi Pyraminx ($9.99)">
+        QiYi Pyraminx ($9.99)<br>
+
+        <input type="checkbox" name="cube6" value="ShengShou Megaminx ($15.99)">
+        ShengShou Megaminx ($15.99)<br><br>
+
+        <h3>Experience Rating</h3>
+
+        <label>Rate your experience (1 to 10)</label><br>
+        <input type="range" name="experience" min="1" max="10" id="experienceRange" 
+               oninput="expValue.textContent = this.value">
         <span id="expValue">5</span><br><br>
 
+        <h3>Music Preference</h3>
         <label>Choose your favorite type of music:</label>
         <input list="music" name="musicType">
         <datalist id="music">
@@ -82,13 +110,15 @@
             <option value="EDM">
             <option value="Jazz">
         </datalist>
-        <br><br> 
+        <br><br>
 
+        <h3>Additional Comments</h3>
         <label>Comments:</label><br>
         <textarea name="comments" rows="4" cols="40"></textarea><br><br>
 
-        <button type="submit">Submit</button>
-      
+        <button type="submit">Submit Order</button>
+
     </form>
+
 </body>
 </html>
