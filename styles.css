@@ -91,21 +91,22 @@ section:hover {
     transform: scale(1.01);
 }
 
-/* ====== Rubik Cube Form Bubbles ====== */
+/* Rubik Cube Form Bubbles with stronger colors but readable text */
 .section-bubble {
     border-radius: 12px;
     padding: 20px;
     margin-bottom: 20px;
     box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+    color: #000; /* ensures text is readable */
 }
 
-/* Faded Rubik’s Cube colors */
-.bubble-white { background-color: rgba(255, 255, 255, 0.8); }
-.bubble-yellow { background-color: rgba(255, 255, 0, 0.2); }
-.bubble-red { background-color: rgba(255, 0, 0, 0.2); }
-.bubble-blue { background-color: rgba(0, 0, 255, 0.2); }
-.bubble-green { background-color: rgba(0, 128, 0, 0.2); }
-.bubble-orange { background-color: rgba(255, 165, 0, 0.2); }
+/* Bubble boxes for form with strong colors */
+.bubble-white { background-color: rgba(255, 255, 255, 0.9); }
+.bubble-yellow { background-color: rgba(255, 255, 0, 0.6); }
+.bubble-red { background-color: rgba(255, 0, 0, 0.6); }
+.bubble-blue { background-color: rgba(0, 0, 255, 0.6); }
+.bubble-green { background-color: rgba(0, 128, 0, 0.6); }
+.bubble-orange { background-color: rgba(255, 165, 0, 0.6); }
 
 /* ====== Footer Section ====== */
 
