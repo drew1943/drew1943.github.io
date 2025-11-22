@@ -68,11 +68,11 @@ main img {
 }
 
 /* Optional: captions under images */
-main figcaption {
+figcaption, .caption {
+    color: #000;  /* black text */
     text-align: center;
     font-size: 0.9rem;
-    color: #555;
-    margin-bottom: 20px;
+    margin-top: 8px;
 }
 
 /* If using .photo-row container for multiple images */
@@ -94,14 +94,6 @@ main figcaption {
     border-radius: 8px;
 }
 
-figcaption {
-    background-color: #000;
-    color: #fff;
-    padding: 6px 10px;
-    border-radius: 4px;
-    display: inline-block;
-    margin: 10px 0 0 0;
-}
 
 /* Rubik cube colors */
 nav li:nth-child(1) a { background-color: #d80000; } /* red */
