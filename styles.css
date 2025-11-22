@@ -78,14 +78,26 @@ main figcaption {
 /* If using .photo-row container for multiple images */
 .photo-row {
     display: flex;
-    flex-wrap: wrap;      /* Allows multiple rows on smaller screens */
-    gap: 20px;
+    flex-wrap: wrap;       /* Wrap on smaller screens */
+    gap: 20px;             /* Space between images */
     margin-top: 20px;
 }
 
 .photo-card {
+    flex: 1 1 300px;       /* Grow/shrink with min width */
     text-align: center;
-    flex: 1 1 300px;      /* Responsive sizing with minimum width */
+}
+
+.photo-card img {
+    width: 100%;           /* Scale to container */
+    height: auto;          /* Maintain aspect ratio */
+    border-radius: 8px;
+}
+
+.caption, figcaption {
+    margin-top: 8px;
+    font-size: 0.9rem;
+    color: #555;
 }
 
 /* Rubik cube colors */
