@@ -58,13 +58,38 @@ nav a {
 
 /* ====== Global Image Styles ====== */
 
-/* Applies to all images inside main content sections */
+/* Global image styling for standalone images in main content */
 main img {
-    width: 100%;           /* Makes the image responsive to container width */
-    max-width: 400px;      /* Optional: limit maximum width */
-    border-radius: 8px;    /* Rounded corners */
-    display: block;        /* Avoid inline spacing issues */
-    margin: 0 auto 10px;   /* Center images and give bottom spacing */
+    width: 100%;
+    max-width: 400px;
+    height: auto;              /* Prevents distortion for single images */
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+/* Photo row for multiple uniform sized images */
+.photo-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Image card container */
+.photo-card {
+    flex: 1 1 220px;            /* Allows scaling but keeps a minimum width */
+    max-width: 220px;           /* Ensures all cards stay the same width */
+    text-align: center;
+}
+
+/* Uniform image size for gallery images */
+.photo-card img {
+    width: 100%;
+    height: 200px;              /* Forces identical height */
+    object-fit: cover;          /* Crops excess while keeping proportions */
+    border-radius: 10px;
 }
 
 /* Optional: captions under images */
@@ -73,29 +98,6 @@ figcaption, .caption {
     text-align: center;
     font-size: 0.9rem;
     margin-top: 8px;
-}
-
-/* If using .photo-row container for multiple images */
-
-.photo-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;                /* space between cubes */
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.photo-card {
-    flex: 1 1 200px;           /* minimum width 200px, grows if space allows */
-    max-width: 220px;           /* prevents cards from being too big */
-    text-align: center;
-}
-
-.photo-card img {
-    width: 100%;               /* fills card width */
-    height: 200px;             /* uniform height for all cubes */
-    object-fit: cover;         /* crop excess, keep aspect ratio */  
-    border-radius: 10px;
 }
 
 /* Rubik cube colors */
