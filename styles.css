@@ -94,10 +94,15 @@ main figcaption {
     border-radius: 8px;
 }
 
-.caption, figcaption {
-    margin-top: 8px;
+    figcaption, .caption {
+    text-align: center;
     font-size: 0.9rem;
-    color: #555;
+    color: #fff;                     /* white text for contrast */
+    background-color: rgba(0, 0, 0, 0.6); /* semi-transparent dark background */
+    padding: 4px 8px;                /* small padding around text */
+    border-radius: 4px;              /* rounded corners for style */
+    display: inline-block;            /* shrink to text width */
+    margin-top: 8px;
 }
 
 /* Rubik cube colors */
